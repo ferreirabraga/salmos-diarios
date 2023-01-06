@@ -1,0 +1,38 @@
+{
+  "name": "serverless-auth",
+  "version": "1.0.0",
+  "repository": "git@github.com:yosriady/serverless-auth.git",
+  "author": "Yos Riady <yosriady@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "node_modules/.bin/jest",
+    "test:coverage": "open coverage/lcov-report/index.html",
+    "eslint": "./node_modules/.bin/eslint .",
+    "start": "./node_modules/.bin/serverless offline -s dev",
+    "debug": "export SLS_DEBUG=* && node --inspect ./node_modules/.bin/serverless offline -s dev"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.512.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "jest": "^29.3.1",
+    "lambda-tester": "^3.6.0",
+    "serverless-offline": "^12.0.4"
+  },
+  "jest": {
+    "collectCoverage": true
+  },
+  "dependencies": {
+    "async": "^3.1.0",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "lodash": "^4.17.20",
+    "mongodb": "^3.3.4",
+    "mongodb-core": "^3.2.7",
+    "mongoose": "^5.7.10",
+    "request": "^2.88.2",
+    "serverless": "^3.26.0"
+  }
+}

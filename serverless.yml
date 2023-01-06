@@ -1,0 +1,115 @@
+# Welcome to serverless. Read the docs
+# https://serverless.com/framework/docs/
+
+# Serverless.yml is the configuration the CLI
+# uses to deploy your code to your provider of choice
+
+# The `service` block is the name of the service
+service: rest-api-serverless-fiap # NOTE: update this with your service name
+
+plugins:
+  - serverless-offline
+
+# Configuration variables
+custom:
+  secrets: ${file(secrets.json)}
+  env: ${file(${opt:stage}.json)}
+  # serverless-offline:   ## add this two lines
+  #     port: 4000        ## bellow "custom:" line  
+  # bucket: serverless-petsback
+  # resultTtlInSeconds: 0
+
+# The `provider` block defines where your service will be deployed
+provider:
+  name: aws
+  runtime: nodejs12.x
+  memorySize: 128 # set the maximum memory of the Lambdas in Megabytes
+  timeout: 20 # the timeout is 10 seconds (default is 6 seconds)
+  #comando para deploy (serverless deploy --stage dev/prd) o uso da variavel da linha
+  #abaixo ${opt:stage} pega o dev do comando de deploy mostrado na linha acima
+  stage: ${opt:stage} # setting the env stage to dev, this will be visible in the routes
+  #profile: personal
+  region: us-east-1
+  # iamRoleStatements:
+  #   - Effect: Allow
+  #     Action:
+  #       - s3:*
+  #     Resource: "*"
+  environment:
+    JWT_SECRET: ${self:custom.secrets.jwtSecret}
+    DB:  ${self:custom.secrets.DB}
+    SCHEMA: ${self:custom.secrets.schema} 
+
+# The `functions` block defines what code to deploy
+functions:
+
+  # hello:
+  #   handler:  handler.hello
+  #   events:
+  #     - http:
+  #         path: hello
+  #         method: get
+  #         cors: true
+          
+  dia:
+    handler:  handler.dodia
+    events:
+      - http:
+          path: salmo
+          method: get
+          cors: true
+
+  diaJson:
+    handler:  handler.dodia
+    events:
+      - http:
+          path: salmo/json
+          method: get
+          cors: true
+
+  capitulo:
+    handler:  handler.porCapitulo
+    events:
+      - http:
+          path: salmo/{capitulo}
+          method: get
+          cors: true
+  capituloJson:
+    handler:  handler.porCapitulo
+    events:
+      - http:
+          path: salmo/{capitulo}/json
+          method: get
+          cors: true
+
+  verso:
+    handler:  handler.porVerso
+    events:
+      - http:
+          path: salmo/{capitulo}/{verso}
+          method: get
+          cors: true
+
+  versoJson:
+    handler:  handler.porVerso
+    events:
+      - http:
+          path: salmo/{capitulo}/{verso}/json
+          method: get
+          cors: true
+
+  gostei:
+    handler:  gostei.adicionar
+    events:
+      - http:
+          path: salmo
+          method: post
+          cors: true
+
+  gosteiRemover:
+    handler:  gostei.remover
+    events:
+      - http:
+          path: salmo
+          method: delete
+          cors: true
