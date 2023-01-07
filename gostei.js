@@ -53,14 +53,17 @@ function cadastrar(dados) {
                               
                               resposta.codigo = 1;
                               resposta.mensagem = "Salmo salvo com sucesso";
+                              db.close();
+                              resolve(resposta);
                           })
                           .catch(function (err) {
                               
                               resposta.codigo = 0;
                               resposta.mensagem = "Erro ao inserir salmo.";
+                              db.close();
+                              resolve(resposta);
                           });
-                          db.close();
-                          resolve(resposta);
+                         
                   }
                 
               });
