@@ -2,7 +2,7 @@
 
 ## ► Table of Contents
 
-- [Instalação ?](#instalação)
+- [Instalação](#instalação)
 - [API](#API)
 
 ## Instalação
