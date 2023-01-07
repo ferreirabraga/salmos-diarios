@@ -3,6 +3,7 @@
 ## ► Table of Contents
 
 - [Instalação](#instalação)
+- [AWS](#AWS)
 - [API](#API)
 - [Info](#INFO)
 
@@ -21,6 +22,54 @@ Abra um terminal entre na pasta do projeto que você clonou e execute o comando
 Exemplo:
   serverless offline -s dev
 
+```
+Será mostrada as urls da API
+
+```
+   |   GET    | http://localhost:3000/dev/salmo                                        │
+   │   POST   | http://localhost:3000/2015-03-31/functions/dia/invocations             │
+   │   GET    | http://localhost:3000/dev/salmo/json                                   │
+   │   POST   | http://localhost:3000/2015-03-31/functions/diaJson/invocations         │
+   │   GET    | http://localhost:3000/dev/salmo/{capitulo}                             │
+   │   POST   | http://localhost:3000/2015-03-31/functions/capitulo/invocations        │
+   │   GET    | http://localhost:3000/dev/salmo/{capitulo}/json                        │
+   │   POST   | http://localhost:3000/2015-03-31/functions/capituloJson/invocations    │
+   │   GET    | http://localhost:3000/dev/salmo/{capitulo}/{verso}                     │
+   │   POST   | http://localhost:3000/2015-03-31/functions/verso/invocations           │
+   │   GET    | http://localhost:3000/dev/salmo/{capitulo}/{verso}/json                │
+   │   POST   | http://localhost:3000/2015-03-31/functions/versoJson/invocations       │
+   │   POST   | http://localhost:3000/dev/salmo                                        │
+   │   POST   | http://localhost:3000/2015-03-31/functions/gostei/invocations          │
+   │   DELETE | http://localhost:3000/dev/salmo                                        │
+   │   POST   | http://localhost:3000/2015-03-31/functions/gosteiRemover/invocations  
+
+```
+## AWS
+### Enviado o projeto para AWS
+
+1) Gerando credenciais:
+
+Para enviar o projeto para a AWS você precisa gerar suas credenciais:
+```
+AWS_SECRET_ACCESS_KEY
+
+AWS_ACCESS_KEY_ID
+```
+Siga o passo a passo nesse link para gerar suas credenciais
+```
+https://www.msp360.com/resources/blog/how-to-find-your-aws-access-key-id-and-secret-access-key/
+```
+2) Enviando o projeto para AWS
+
+Execute o comando abaixo, onde XXXXX são as credenciais geradas no passo anterior
+
+```
+export AWS_SECRET_ACCESS_KEY=XXXXX
+export AWS_ACCESS_KEY_ID=XXXXX
+```
+Agora para executar o deploy, execute o comando abaixo:
+```
+ serverless deploy --stage dev
 ```
 
 ## API
