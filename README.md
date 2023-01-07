@@ -4,6 +4,7 @@
 
 - [Instalação](#instalação)
 - [API](#API)
+- [Info](#INFO)
 
 ## Instalação
 
@@ -27,7 +28,7 @@ Exemplo:
 ### Salmos
 <details>
   <summary>
-    <b>Get Salmo Diário</b> - <i>Retorna um salmo de forma aleatória em formato texto</i>
+    <b>Get Salmo Diário</b> - <i>Retorna um salmo de forma aleatória em formato texto</i> (acesso a API externa)
   </summary>
   <br/>
   
@@ -88,7 +89,7 @@ Exemplo:
 
 <details>
   <summary>
-    <b>Get Salmo Diário por capítulo</b> - <i>Retorna um salmo pelo capítulo informado em formato texto</i>
+    <b>Get Salmo Diário por capítulo</b> - <i>Retorna um salmo pelo capítulo informado em formato texto</i> (acesso a API externa)
   </summary>
   <br/>
   
@@ -147,7 +148,7 @@ Exemplo:
 
 <details>
   <summary>
-    <b>Get Salmo Diário por capítulo e verso</b> - <i>Retorna um salmo pelo capítulo informado e o verso em formato texto</i>
+    <b>Get Salmo Diário por capítulo e verso</b> - <i>Retorna um salmo pelo capítulo informado e o verso em formato texto</i> (acesso a API externa)
   </summary>
   <br/>
   
@@ -180,7 +181,7 @@ Exemplo:
 
  <details>
   <summary>
-    <b>Salvar favorito</b> - <i>Salva um salmo como favorito</i>
+    <b>Salvar favorito</b> - <i>Salva um salmo como favorito</i> (uso de banco de dados Mongo)
   </summary>
   <br/>
   
@@ -214,7 +215,7 @@ Exemplo:
 
  <details>
   <summary>
-    <b>Listar Favoritos</b> - <i>Lista os salmos favoritos</i>
+    <b>Listar Favoritos</b> - <i>Lista os salmos favoritos</i>  (uso de banco de dados Mongo)
   </summary>
   <br/>
   
@@ -256,7 +257,7 @@ Exemplo:
 
 <details>
   <summary>
-    <b>Apagar favorito</b> - <i>Apaga um salmo favorito</i>
+    <b>Apagar favorito</b> - <i>Apaga um salmo favorito</i> (uso de banco de dados Mongo)
   </summary>
   <br/>
   
@@ -288,4 +289,7 @@ Exemplo:
 
 </details>
 
-OBS: Foi utilizado o número do celular somente para fins do uso de uma chave para demostração para o uso de banco de dados
+## Info
+OBS: Foi utilizado o número do celular como chave de somente para fins de demostração de utilização de banco de dados.
+
+OBS1: O database-salmos-diarios foi criado na plataforma https://www.mongodb.com/ para uso educionais e foi criado uma coleção favoritos para salvar os salmos favoritos do usuário.
