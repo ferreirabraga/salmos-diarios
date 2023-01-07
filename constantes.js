@@ -2,7 +2,7 @@
 console.log("ambiente:"+process.env.DB)
 console.log("banco:"+process.env.SCHEMA)
 const DATABASE = process.env.SCHEMA;
-const TABELA_SALMOS = 'salmos-ja-lidos';
+const TABELA_SALMOS = 'favoritos';
 
 // const SCOPES = ['cadastrarAnimalAbrigo','alterarAnimalAbrigo','deletarAnimalAbrigo', 'alteraAnimalFoto',
 // 'cadastrarAdotanteAnimal', 'alterarAdotanteAnimal', 'deletarAdotanteAnimal','deleteAnimalFoto',
