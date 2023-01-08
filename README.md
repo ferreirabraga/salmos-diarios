@@ -27,22 +27,23 @@ Exemplo:
 Será mostrada as urls da API
 
 ```
-   |   GET    | http://localhost:3000/dev/salmo                                        │
-   │   POST   | http://localhost:3000/2015-03-31/functions/dia/invocations             │
-   │   GET    | http://localhost:3000/dev/salmo/json                                   │
-   │   POST   | http://localhost:3000/2015-03-31/functions/diaJson/invocations         │
-   │   GET    | http://localhost:3000/dev/salmo/{capitulo}                             │
-   │   POST   | http://localhost:3000/2015-03-31/functions/capitulo/invocations        │
-   │   GET    | http://localhost:3000/dev/salmo/{capitulo}/json                        │
-   │   POST   | http://localhost:3000/2015-03-31/functions/capituloJson/invocations    │
-   │   GET    | http://localhost:3000/dev/salmo/{capitulo}/{verso}                     │
-   │   POST   | http://localhost:3000/2015-03-31/functions/verso/invocations           │
-   │   GET    | http://localhost:3000/dev/salmo/{capitulo}/{verso}/json                │
-   │   POST   | http://localhost:3000/2015-03-31/functions/versoJson/invocations       │
-   │   POST   | http://localhost:3000/dev/salmo                                        │
-   │   POST   | http://localhost:3000/2015-03-31/functions/gostei/invocations          │
-   │   DELETE | http://localhost:3000/dev/salmo                                        │
-   │   POST   | http://localhost:3000/2015-03-31/functions/gosteiRemover/invocations  
+   |   GET    | http://localhost:3000/dev/api/salmo                                          │
+   │   POST   | http://localhost:3000/2015-03-31/functions/dia/invocations                   │
+   │   GET    | http://localhost:3000/dev/api/salmo/json                                     │
+   │   POST   | http://localhost:3000/2015-03-31/functions/diaJson/invocations               │
+   │   GET    | http://localhost:3000/dev/api/salmo/{capitulo}                               │
+   │   POST   | http://localhost:3000/2015-03-31/functions/capitulo/invocations              │
+   │   GET    | http://localhost:3000/dev/api/salmo/{capitulo}/json                          │
+   │   POST   | http://localhost:3000/2015-03-31/functions/capituloJson/invocations          │
+   │   GET    | http://localhost:3000/dev/api/salmo/{capitulo}/{verso}                       │
+   │   POST   | http://localhost:3000/2015-03-31/functions/verso/invocations                 │
+   │   GET    | http://localhost:3000/dev/api/salmo/{capitulo}/{verso}/json                  │
+   │   POST   | http://localhost:3000/2015-03-31/functions/versoJson/invocations             │
+   │   POST   | http://localhost:3000/dev/api/salmo/favoritos                                │
+   │   POST   | http://localhost:3000/2015-03-31/functions/favorito/invocations              │
+   │   DELETE | http://localhost:3000/dev/api/salmo/favoritos                                │
+   │   POST   | http://localhost:3000/2015-03-31/functions/favoritoRemover/invocations       │
+   │   GET    | http://localhost:3000/dev/api/salmo/favoritos/{telefone}                     |
 
 ```
 ## AWS
@@ -82,7 +83,7 @@ Agora para executar o deploy, execute o comando abaixo:
   </summary>
   <br/>
   
-  <b>Endpoint: (texto)</b> `GET https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/salmo`
+  <b>Endpoint: (texto)</b> `GET https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo`
   <br /><br />
   Retorno:<br />
   ```
@@ -95,7 +96,7 @@ Agora para executar o deploy, execute o comando abaixo:
 7)Beberá do ribeiro no caminho, por isso exaltará a cabeça.
   ```
   
-<b>Endpoint: (JSON)</b> `GET - https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/salmo/json`
+<b>Endpoint: (JSON)</b> `GET - https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo/json`
   <br /><br />
   Retorno:<br />
   ```
@@ -235,7 +236,7 @@ Agora para executar o deploy, execute o comando abaixo:
   </summary>
   <br/>
   
-  <b>Endpoint:(texto)</b> `POST - https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo`
+  <b>Endpoint:(texto)</b> `POST - https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo/favoritos`
   <br /><br />
   Requisição:<br />
   ```
@@ -269,7 +270,7 @@ Agora para executar o deploy, execute o comando abaixo:
   </summary>
   <br/>
   
-  <b>Endpoint:(texto)</b> `GET - https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo/favorito/{telefone}  `
+  <b>Endpoint:(texto)</b> `GET - https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo/favoritos/{telefone}`
   <br /><br />
   
   
@@ -311,7 +312,7 @@ Agora para executar o deploy, execute o comando abaixo:
   </summary>
   <br/>
   
-  <b>Endpoint:(texto)</b> `DETELE - https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo`
+  <b>Endpoint:(texto)</b> `DETELE - https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo/favoritos`
   <br /><br />
   Requisição:<br />
    ```
