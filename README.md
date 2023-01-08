@@ -7,7 +7,7 @@
 - [API](#API)
 - [Info](#INFO)
 - [Troubleshooting](#troubleshooting)
-- <a href="doc:video">Video Tutorial</a>
+- [Video Tutorial](#video)
 ## Instalação
 
 ### Passos
