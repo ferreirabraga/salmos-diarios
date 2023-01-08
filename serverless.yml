@@ -14,15 +14,11 @@ plugins:
 custom:
   secrets: ${file(secrets.json)}
   env: ${file(${opt:stage}.json)}
-  # serverless-offline:   ## add this two lines
-  #     port: 4000        ## bellow "custom:" line  
-  # bucket: serverless-petsback
-  # resultTtlInSeconds: 0
 
 # The `provider` block defines where your service will be deployed
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs14.x
   memorySize: 128 # set the maximum memory of the Lambdas in Megabytes
   timeout: 20 # the timeout is 10 seconds (default is 6 seconds)
   #comando para deploy (serverless deploy --stage dev/prd) o uso da variavel da linha
@@ -43,19 +39,11 @@ provider:
 # The `functions` block defines what code to deploy
 functions:
 
-  # hello:
-  #   handler:  handler.hello
-  #   events:
-  #     - http:
-  #         path: hello
-  #         method: get
-  #         cors: true
-          
   dia:
     handler:  handler.dodia
     events:
       - http:
-          path: salmo
+          path: api/salmo
           method: get
           cors: true
 
@@ -63,7 +51,7 @@ functions:
     handler:  handler.dodia
     events:
       - http:
-          path: salmo/json
+          path: api/salmo/json
           method: get
           cors: true
 
@@ -71,14 +59,14 @@ functions:
     handler:  handler.porCapitulo
     events:
       - http:
-          path: salmo/{capitulo}
+          path: api/salmo/{capitulo}
           method: get
           cors: true
   capituloJson:
     handler:  handler.porCapitulo
     events:
       - http:
-          path: salmo/{capitulo}/json
+          path: api/salmo/{capitulo}/json
           method: get
           cors: true
 
@@ -86,7 +74,7 @@ functions:
     handler:  handler.porVerso
     events:
       - http:
-          path: salmo/{capitulo}/{verso}
+          path: api/salmo/{capitulo}/{verso}
           method: get
           cors: true
 
@@ -94,22 +82,30 @@ functions:
     handler:  handler.porVerso
     events:
       - http:
-          path: salmo/{capitulo}/{verso}/json
+          path: api/salmo/{capitulo}/{verso}/json
           method: get
           cors: true
 
-  gostei:
-    handler:  gostei.adicionar
+  favorito:
+    handler:  favoritos.adicionar
     events:
       - http:
-          path: salmo
+          path: api/salmo/favoritos
           method: post
           cors: true
 
-  gosteiRemover:
-    handler:  gostei.remover
+  favoritoRemover:
+    handler:  favoritos.remover
     events:
       - http:
-          path: salmo
+          path: api/salmo/favoritos
           method: delete
+          cors: true
+
+  favoritoListar:
+    handler:  favoritos.listar
+    events:
+      - http:
+          path: api/salmo/favoritos/{telefone}
+          method: get
           cors: true

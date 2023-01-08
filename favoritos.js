@@ -11,7 +11,7 @@ module.exports.adicionar = async (event) => {
   console.log(" deu certo");
   let bodyP = JSON.parse(event.body);
 
-  return cadastrar(bodyP).then(
+  return adicionar(bodyP).then(
     function (value) {
       return ({
         statusCode: 200,
@@ -25,7 +25,7 @@ module.exports.adicionar = async (event) => {
 
 };
 
-function cadastrar(dados) {
+function adicionar(dados) {
   let resposta = {};
   return new Promise(function (resolve, reject) {
       
@@ -118,6 +118,55 @@ function remover(dados) {
             resolve(resposta);
         });
         
+      })
+  });
+}
+
+module.exports.listar = async (event) => {
+  
+  let path = event.path.split('favoritos/');
+  var telefone = path[1]; 
+
+  return listar(telefone).then(
+    function (value) {
+      return ({
+        statusCode: 200,
+        body: JSON.stringify(value)
+      })
+    }).catch(err => ({
+      statusCode: err.statusCode || 500,
+      headers: { "Content-Type": "text/plain" },
+      body: JSON.stringify({ message: err.message })
+    }));
+
+};
+
+function listar(telefone) {
+  let resposta = {};
+  return new Promise(function (resolve, reject) {
+  
+    MongoClient.connect(process.env.DB, function (err, db) {
+        if (err) throw err;
+        let database = db.db(constantes.DATABASE);
+        
+        let query = {"telefone":telefone}
+        
+        database.collection(constantes.TABELA_SALMOS)
+          .find(query)
+          .toArray((err, results) => {
+            if (err) throw err;
+            if (results.length > 0) {
+            
+              db.close();
+              resolve(results);          
+            } else {
+              resposta.codigo = 0;
+              resposta.mensagem = "Número de telefone sem salmos salvos.";
+              db.close();
+              resolve(resposta);
+            }
+            
+          });
       })
   });
 }
