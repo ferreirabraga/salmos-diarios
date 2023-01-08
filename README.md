@@ -6,6 +6,7 @@
 - [AWS](#AWS)
 - [API](#API)
 - [Info](#INFO)
+- [Troubleshooting](#troubleshooting)
 
 ## Instalação
 
@@ -334,7 +335,7 @@ Agora para executar o deploy, execute o comando abaixo:
     "codigo": 0,
     "mensagem": "Salmo não cadastrado com favorito."
 }
-  ```
+ ```
 
 </details>
 
@@ -342,3 +343,11 @@ Agora para executar o deploy, execute o comando abaixo:
 OBS: Foi utilizado o número do celular como chave de somente para fins de demostração de utilização de banco de dados.
 
 OBS1: O database-salmos-diarios foi criado na plataforma https://www.mongodb.com/ para uso educionais e foi criado uma coleção favoritos para salvar os salmos favoritos do usuário.
+
+## troubleshooting
+Erro que ocorreu depois de tentar rodar a url que executa o MongoDB.
+```
+ MongoError: failed to connect to server [mongodb:27017] on first connect
+```
+<b> Solução</b>
+
