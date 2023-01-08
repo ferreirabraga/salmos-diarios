@@ -374,3 +374,7 @@ AWS Lambda error "Cannot find module 'mongodb'"
 6) Clique no link create a new layer
 7) Cadastre um nome, uma descrição, selecione a opção upload a .zip file, clique no botão UPLOAD e depois clique em create.
    <i>Quando for adicionar o layer para o segundo Lambda selecione a opção custom layer</i>
+   
+## Video
+### Veja o vídeo mostrando a instalação e o deploy da aplicação
+<a href="https://youtu.be/mIo1KAmkCRs" target="_blank">Projeto Serveless MBA BB</a>
