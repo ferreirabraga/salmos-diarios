@@ -377,4 +377,4 @@ AWS Lambda error "Cannot find module 'mongodb'"
    
 ## video
 ### Veja o vídeo mostrando a instalação e o deploy da aplicação
-<a href="https://youtu.be/mIo1KAmkCRs" target="_blank">Projeto Serveless MBA BB</a>
+<a href="https://youtu.be/2QsEbvsPfig" target="_blank">Projeto Serveless MBA BB</a>
