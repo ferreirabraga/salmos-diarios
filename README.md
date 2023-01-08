@@ -83,7 +83,7 @@ Agora para executar o deploy, execute o comando abaixo:
   </summary>
   <br/>
   
-  <b>Endpoint: (texto)</b> `GET https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo`
+  <b>Endpoint: (texto)</b> `GET https://o8uad25osg.execute-api.us-east-1.amazonaws.com/dev/api/salmo`
   <br /><br />
   Retorno:<br />
   ```
@@ -96,7 +96,7 @@ Agora para executar o deploy, execute o comando abaixo:
 7)Beberá do ribeiro no caminho, por isso exaltará a cabeça.
   ```
   
-<b>Endpoint: (JSON)</b> `GET - https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo/json`
+<b>Endpoint: (JSON)</b> `GET - https://o8uad25osg.execute-api.us-east-1.amazonaws.com/dev/api/salmo/json`
   <br /><br />
   Retorno:<br />
   ```
@@ -144,7 +144,7 @@ Agora para executar o deploy, execute o comando abaixo:
   </summary>
   <br/>
   
-  <b>Endpoint:(texto)</b> `GET https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo/{capitulo}`
+  <b>Endpoint:(texto)</b> `GET https://o8uad25osg.execute-api.us-east-1.amazonaws.com/dev/api/salmo/{capitulo}`
   <br /><br />
   Retorno:<br />
   ```
@@ -157,7 +157,7 @@ Agora para executar o deploy, execute o comando abaixo:
 7)Beberá do ribeiro no caminho, por isso exaltará a cabeça.
   ```
   
-  <b>Endpoint:(JSON)</b> `GET https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo/{capitulo}/json`
+  <b>Endpoint:(JSON)</b> `GET https://o8uad25osg.execute-api.us-east-1.amazonaws.com/dev/api/salmo/{capitulo}/json`
   <br /><br />
   Retorno:<br />
   ```
@@ -203,7 +203,7 @@ Agora para executar o deploy, execute o comando abaixo:
   </summary>
   <br/>
   
-  <b>Endpoint:(texto)</b> `GET https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo/{capitulo}/{verso}`
+  <b>Endpoint:(texto)</b> `GET https://o8uad25osg.execute-api.us-east-1.amazonaws.com/dev/api/salmo/{capitulo}/{verso}`
   <br /><br />
   Retorno:<br />
   ```
@@ -217,7 +217,7 @@ Agora para executar o deploy, execute o comando abaixo:
   ```
 
   
-  <b>Endpoint:(JSON)</b> `GET https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo/{capitulo}/{verso}/json`
+  <b>Endpoint:(JSON)</b> `GET https://o8uad25osg.execute-api.us-east-1.amazonaws.com/dev/api/salmo/{capitulo}/{verso}/json`
   <br /><br />
   
   ```
@@ -236,7 +236,7 @@ Agora para executar o deploy, execute o comando abaixo:
   </summary>
   <br/>
   
-  <b>Endpoint:(texto)</b> `POST - https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo`
+  <b>Endpoint:(texto)</b> `POST - https://o8uad25osg.execute-api.us-east-1.amazonaws.com/dev/api/salmo`
   <br /><br />
   Requisição:<br />
   ```
@@ -270,7 +270,7 @@ Agora para executar o deploy, execute o comando abaixo:
   </summary>
   <br/>
   
-  <b>Endpoint:(texto)</b> `GET - https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo/favorito/{telefone}  `
+  <b>Endpoint:(texto)</b> `GET - https://o8uad25osg.execute-api.us-east-1.amazonaws.com/dev/api/salmo/favorito/{telefone}  `
   <br /><br />
   
   
@@ -312,7 +312,7 @@ Agora para executar o deploy, execute o comando abaixo:
   </summary>
   <br/>
   
-  <b>Endpoint:(texto)</b> `DETELE - https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo`
+  <b>Endpoint:(texto)</b> `DETELE - https://o8uad25osg.execute-api.us-east-1.amazonaws.com/dev/api/salmo`
   <br /><br />
   Requisição:<br />
    ```
@@ -374,5 +374,3 @@ AWS Lambda error "Cannot find module 'mongodb'"
 6) Clique no link create a new layer
 7) Cadastre um nome, uma descrição, selecione a opção upload a .zip file, clique no botão UPLOAD e depois clique em create.
    <i>Quando for adicionar o layer para o segundo Lambda selecione a opção custom layer</i>
-
-
