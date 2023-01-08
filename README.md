@@ -27,23 +27,23 @@ Exemplo:
 Será mostrada as urls da API
 
 ```
-   |   GET    | http://localhost:3000/dev/api/salmo                                          │
-   │   POST   | http://localhost:3000/2015-03-31/functions/dia/invocations                   │
-   │   GET    | http://localhost:3000/dev/api/salmo/json                                     │
-   │   POST   | http://localhost:3000/2015-03-31/functions/diaJson/invocations               │
-   │   GET    | http://localhost:3000/dev/api/salmo/{capitulo}                               │
-   │   POST   | http://localhost:3000/2015-03-31/functions/capitulo/invocations              │
-   │   GET    | http://localhost:3000/dev/api/salmo/{capitulo}/json                          │
-   │   POST   | http://localhost:3000/2015-03-31/functions/capituloJson/invocations          │
-   │   GET    | http://localhost:3000/dev/api/salmo/{capitulo}/{verso}                       │
-   │   POST   | http://localhost:3000/2015-03-31/functions/verso/invocations                 │
-   │   GET    | http://localhost:3000/dev/api/salmo/{capitulo}/{verso}/json                  │
-   │   POST   | http://localhost:3000/2015-03-31/functions/versoJson/invocations             │
-   │   POST   | http://localhost:3000/dev/api/salmo/favoritos                                │
-   │   POST   | http://localhost:3000/2015-03-31/functions/favorito/invocations              │
-   │   DELETE | http://localhost:3000/dev/api/salmo/favoritos                                │
-   │   POST   | http://localhost:3000/2015-03-31/functions/favoritoRemover/invocations       │
-   │   GET    | http://localhost:3000/dev/api/salmo/favoritos/{telefone}                     |
+   |   GET    | http://localhost:3000/dev/api/salmo                                        │
+   │   POST   | http://localhost:3000/2015-03-31/functions/dia/invocations                 │
+   │   GET    | http://localhost:3000/dev/api/salmo/json                                   │
+   │   POST   | http://localhost:3000/2015-03-31/functions/diaJson/invocations             │
+   │   GET    | http://localhost:3000/dev/api/salmo/{capitulo}                             │
+   │   POST   | http://localhost:3000/2015-03-31/functions/capitulo/invocations            │
+   │   GET    | http://localhost:3000/dev/api/salmo/{capitulo}/json                        │
+   │   POST   | http://localhost:3000/2015-03-31/functions/capituloJson/invocations        │
+   │   GET    | http://localhost:3000/dev/api/salmo/{capitulo}/{verso}                     │
+   │   POST   | http://localhost:3000/2015-03-31/functions/verso/invocations               │
+   │   GET    | http://localhost:3000/dev/api/salmo/{capitulo}/{verso}/json                │
+   │   POST   | http://localhost:3000/2015-03-31/functions/versoJson/invocations           │
+   │   POST   | http://localhost:3000/dev/api/salmo/favoritos                              │
+   │   POST   | http://localhost:3000/2015-03-31/functions/favorito/invocations            │
+   │   DELETE | http://localhost:3000/dev/api/salmo/favoritos                              │
+   │   POST   | http://localhost:3000/2015-03-31/functions/favoritoRemover/invocations     │
+   │   GET    | http://localhost:3000/dev/api/salmo/favoritos/{telefone}                   │ 
 
 ```
 ## AWS
@@ -236,7 +236,7 @@ Agora para executar o deploy, execute o comando abaixo:
   </summary>
   <br/>
   
-  <b>Endpoint:(texto)</b> `POST - https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo/favoritos`
+  <b>Endpoint:(texto)</b> `POST - https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo`
   <br /><br />
   Requisição:<br />
   ```
@@ -270,7 +270,7 @@ Agora para executar o deploy, execute o comando abaixo:
   </summary>
   <br/>
   
-  <b>Endpoint:(texto)</b> `GET - https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo/favoritos/{telefone}`
+  <b>Endpoint:(texto)</b> `GET - https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo/favorito/{telefone}  `
   <br /><br />
   
   
@@ -312,7 +312,7 @@ Agora para executar o deploy, execute o comando abaixo:
   </summary>
   <br/>
   
-  <b>Endpoint:(texto)</b> `DETELE - https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo/favoritos`
+  <b>Endpoint:(texto)</b> `DETELE - https://oiup8kr3zi.execute-api.us-east-1.amazonaws.com/dev/api/salmo`
   <br /><br />
   Requisição:<br />
    ```
@@ -346,9 +346,33 @@ OBS: Foi utilizado o número do celular como chave de somente para fins de demos
 OBS1: O database-salmos-diarios foi criado na plataforma https://www.mongodb.com/ para uso educionais e foi criado uma coleção favoritos para salvar os salmos favoritos do usuário.
 
 ## troubleshooting
-Erro que ocorreu depois de tentar rodar a url que executa o MongoDB.
+1) Erro que ocorreu depois de tentar rodar a url que executa o MongoDB.
 ```
  MongoError: failed to connect to server [mongodb:27017] on first connect
 ```
 <b> Solução</b>
+Esse erro ocorreu por causa de configuração não realizada no Atlas https://cloud.mongodb.com/
+
+Veja solução em https://stackoverflow.com/questions/41318354/mongodb-failed-to-connect-to-server-on-first-connect
+
+2) Cannot find module 'mongodb'
+
+```
+AWS Lambda error "Cannot find module 'mongodb'"
+```
+<b> Solução</b>
+1) Criar uma pasta com o nome nodeJS na sua máquina local
+2) Adicione as libs da pasta node_modules relacioandas com o Mongo
+3) Zip essa pasta
+4) Acesse sua conta da AWS e pesquisa por Lambda->Functions
+   - pesquise no filtro a palabra gostei
+   - vai aparecer 3 opções 1) fiap-dev-gostei
+                           2) fiap-dev-gosteiListar
+                           3) fiap-dev-gosteiDeletar
+
+5) Selecione uma da lambdas, role a pagina procure por Layers e clique em Add a layer
+6) Clique no link create a new layer
+7) Cadastre um nome, uma descrição, selecione a opção upload a .zip file, clique no botão UPLOAD e depois clique em create.
+   <i>Quando for adicionar o layer para o segundo Lambda selecione a opção custom layer</i>
+
 
